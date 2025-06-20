@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Installation Guide for Windows</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .verification {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .command {
+            background: #1a202c;
+            color: #68d391;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .step {
+            margin: 25px 0;
+        }
+
+        .step-number {
+            background: #ff6b6b;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .checklist {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .check-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-item::before {
+            content: "✅";
+            margin-right: 10px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #f1f3f4;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📄 LaTeX Installation Guide for Windows</h1>
+        <p>Complete installation, setup and first document creation</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🧩</span>Step 1: Download MiKTeX</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Visit the official MiKTeX website:</strong>
+            <p>🔗 URL: <a href="https://miktex.org/download" target="_blank">https://miktex.org/download</a></p>
+            <ul>
+                <li>Click "Download" button</li>
+                <li>Choose "Basic MiKTeX Installer" for Windows</li>
+                <li>Download size: ~200MB (basic installation)</li>
+                <li>Compatible with Windows 10/11 (64-bit)</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ System Requirements:</strong>
+            <ul>
+                <li>Windows 10 or later (64-bit)</li>
+                <li>At least 1GB free disk space</li>
+                <li>Administrator rights (recommended)</li>
+                <li>Internet connection for package downloads</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">💻</span>Step 2: Install MiKTeX</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Run the installer:</strong>
+            <ul>
+                <li>Double-click the downloaded .exe file</li>
+                <li>Click "Yes" if Windows asks for permission</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Installation options:</strong>
+            <ul>
+                <li><strong>Install for:</strong> "All users" (recommended if you have admin rights)</li>
+                <li><strong>Installation directory:</strong> Keep default (C:\Program Files\MiKTeX)</li>
+                <li><strong>Install missing packages:</strong> Choose "Yes" (install on-the-fly)</li>
+                <li><strong>Paper size:</strong> A4 or Letter (your preference)</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Complete installation:</strong>
+            <ul>
+                <li>Click "Next" through all prompts</li>
+                <li>Installation takes 5-10 minutes</li>
+                <li>Don't close Command Prompt windows during installation</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <h3>What Gets Installed:</h3>
+            <div class="check-item">MiKTeX LaTeX distribution</div>
+            <div class="check-item">TeXworks editor (basic GUI editor)</div>
+            <div class="check-item">MiKTeX Console (package manager)</div>
+            <div class="check-item">Command line tools (pdflatex, etc.)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">✍️</span>Step 3: Install a LaTeX Editor</h2>
+        <p>While you can write LaTeX in any text editor, specialized editors make the process much easier:</p>
+
+        <table>
+            <tr>
+                <th>Editor</th>
+                <th>Download Link</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td><strong>TeXworks</strong></td>
+                <td>Installed with MiKTeX</td>
+                <td>Simple and beginner-friendly</td>
+            </tr>
+            <tr>
+                <td><strong>TeXstudio</strong></td>
+                <td><a href="https://www.texstudio.org/" target="_blank">https://www.texstudio.org/</a></td>
+                <td>Full-featured, works perfectly with MiKTeX</td>
+            </tr>
+            <tr>
+                <td><strong>Overleaf</strong></td>
+                <td><a href="https://www.overleaf.com/" target="_blank">https://www.overleaf.com/</a> (online)</td>
+                <td>Browser-based, great for collaboration</td>
+            </tr>
+            <tr>
+                <td><strong>VS Code</strong></td>
+                <td><a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></td>
+                <td>Install "LaTeX Workshop" extension</td>
+            </tr>
+        </table>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Recommended: Install TeXstudio</strong>
+            <ul>
+                <li>Download from the official website</li>
+                <li>Run installer with default settings</li>
+                <li>TeXstudio will automatically detect MiKTeX</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section verification">
+        <h2><span class="emoji">🧪</span>Step 4: Test Your Setup</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Create a test LaTeX file:</strong>
+            <p>Create a new file called <code>hello.tex</code> with this content:</p>
+            <div class="code-block">\documentclass{article}
+                \usepackage[utf8]{inputenc}
+                \title{My First LaTeX Document on Windows}
+                \author{Your Name}
+                \date{\today}
+
+                \begin{document}
+                \maketitle
+
+                \section{Introduction}
+                Hello, world! This is my first LaTeX document on Windows.
+
+                \section{Mathematics}
+                LaTeX handles math beautifully: $E = mc^2$
+
+                \section{Lists}
+                Here's what I can do with LaTeX:
+                \begin{itemize}
+                \item Create professional documents
+                \item Write mathematical equations
+                \item Generate bibliographies
+                \item Make presentations
+                \end{itemize}
+
+                \end{document}</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Compile using Command Prompt/PowerShell:</strong>
+            <div class="code-block"># Open Command Prompt (Win + R, type cmd)
+                # Navigate to your file location
+                cd C:\Users\YourUsername\Desktop
+
+                # Compile the LaTeX file
+                pdflatex hello.tex</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Check the results:</strong>
+            <div class="code-block"># Open the generated PDF
+                start hello.pdf
+
+                # Or list files to see what was created
+                dir *.pdf</div>
+        </div>
+
+        <div class="success">
+            <strong>Success indicators:</strong>
+            <ul>
+                <li>No error messages during compilation</li>
+                <li>Files created: hello.pdf, hello.aux, hello.log</li>
+                <li>PDF opens and displays formatted content</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🎯</span>Alternative: Using TeXstudio (GUI Method)</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Open TeXstudio:</strong>
+            <p>Start Menu → TeXstudio</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Create and compile document:</strong>
+            <ul>
+                <li>File → New (or Ctrl+N)</li>
+                <li>Paste the same LaTeX code from Step 4</li>
+                <li>Save as "hello.tex" (Ctrl+S)</li>
+                <li>Click "Build & View" button (F5)</li>
+                <li>PDF appears automatically in the preview pane</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🔄</span>Step 5: Check for Updates</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Open MiKTeX Console:</strong>
+            <p>Start Menu → MiKTeX Console</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Update packages:</strong>
+            <ul>
+                <li>Go to the "Updates" tab</li>
+                <li>Click "Check for updates"</li>
+                <li>If updates available, click "Update now"</li>
+                <li>Let the process complete</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>💡 Package Installation:</strong>
+            <p>When you compile documents, MiKTeX may prompt to install missing packages. Always click "Install" to get
+                the required components automatically.</p>
+        </div>
+    </div>
+
+    <div class="section verification">
+        <h2><span class="emoji">✅</span>Final Verification Commands</h2>
+        <p>Run these commands in Command Prompt to verify everything works:</p>
+
+        <div class="code-block"># Check if pdflatex is available
+            pdflatex --version
+
+            # Check MiKTeX installation
+            miktex --version
+
+            # List installed packages (optional)
+            mpm --list
+
+            # Check if TeXworks is installed
+            where texworks</div>
+
+        <div class="checklist">
+            <h3>🎉 Final Success Checklist:</h3>
+            <div class="check-item">hello.pdf file created successfully</div>
+            <div class="check-item">PDF opens and displays formatted content</div>
+            <div class="check-item">No compilation errors in Command Prompt</div>
+            <div class="check-item">MiKTeX Console opens without issues</div>
+            <div class="check-item">TeXstudio (or chosen editor) works properly</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📚</span>Common Commands Reference</h2>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Command</th>
+            </tr>
+            <tr>
+                <td>Compile to PDF</td>
+                <td><span class="command">pdflatex filename.tex</span></td>
+            </tr>
+            <tr>
+                <td>Open PDF</td>
+                <td><span class="command">start filename.pdf</span></td>
+            </tr>
+            <tr>
+                <td>Install package</td>
+                <td><span class="command">mpm --install packagename</span></td>
+            </tr>
+            <tr>
+                <td>Update all packages</td>
+                <td><span class="command">mpm --update</span></td>
+            </tr>
+            <tr>
+                <td>Check MiKTeX version</td>
+                <td><span class="command">miktex --version</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="warning">
+        <h3>🚨 Troubleshooting Tips:</h3>
+        <ul>
+            <li><strong>Command not found:</strong> Restart Command Prompt or reboot Windows</li>
+            <li><strong>Package errors:</strong> Install missing packages via MiKTeX Console</li>
+            <li><strong>Permission errors:</strong> Run Command Prompt as Administrator</li>
+            <li><strong>Path issues:</strong> MiKTeX should auto-configure PATH during installation</li>
+            <li><strong>Editor won't compile:</strong> Check if MiKTeX path is configured in editor settings</li>
+        </ul>
+    </div>
+
+    <div class="success">
+        <p><strong>🎉 Installation Complete!</strong> You're now ready to use LaTeX on your Windows machine! You can
+            create professional documents, research papers, presentations, and mathematical content with ease.</p>
+        <p>For questions or help writing LaTeX documents (reports, resumes, presentations), feel free to ask.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #e0e0e0; color: #666;">
+        <p style="margin: 0; font-size: 14px;">
+            <strong>Created by:</strong> Systems Engineer Tayab Farooq<br>
+            <em>Flutter and ML Specialized</em>
+        </p>
+    </div>
+</body>
+
+</html>

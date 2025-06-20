@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Code Snippets Demo for MSc Level</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #667eea;
+        }
+
+        .snippet-container {
+            margin: 20px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .snippet-header {
+            background: #495057;
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .snippet-description {
+            background: #e9ecef;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #495057;
+            font-style: italic;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            overflow-x: auto;
+            margin: 0;
+        }
+
+        .usage-note {
+            background: #fff3cd;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: #856404;
+            border-top: 1px solid #ffeaa7;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            background: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196f3;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .output-preview {
+            background: #f0f8ff;
+            padding: 15px;
+            border: 1px solid #b0d4ff;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📚 LaTeX Code Snippets Demo</h1>
+        <p>Comprehensive guide for MSc level students</p>
+        <p style="font-size: 14px; opacity: 0.9;">Essential LaTeX patterns for academic writing and research</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📝</span>1. Document Structure & Basic Formatting</h2>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Basic Document Template</div>
+            <div class="snippet-description">Essential document structure for academic papers</div>
+            <div class="code-block">\documentclass[12pt,a4paper]{article}
+                \usepackage[utf8]{inputenc}
+                \usepackage[margin=1in]{geometry}
+                \usepackage{times}
+
+                \title{Your Research Paper Title}
+                \author{Your Name \\ University Name}
+                \date{\today}
+
+                \begin{document}
+                \maketitle
+                \tableofcontents
+                \newpage
+
+                Your content here...
+
+                \end{document}</div>
+            <div class="usage-note">Creates a complete academic document with title page and table of contents</div>
+        </div>
+
+        <div class="grid">
+            <div class="snippet-container">
+                <div class="snippet-header">Headings & Sections</div>
+                <div class="snippet-description">Hierarchical document organization</div>
+                <div class="code-block">\section{Introduction}
+                    \subsection{Background}
+                    \subsubsection{Problem Statement}
+                    \paragraph{Details}
+                    \subparagraph{Minor points}</div>
+                <div class="usage-note">Creates numbered sections with automatic formatting</div>
+            </div>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Text Formatting</div>
+                <div class="snippet-description">Basic text styling options</div>
+                <div class="code-block">\textbf{Bold text}
+                    \textit{Italic text}
+                    \underline{Underlined text}
+                    \texttt{Typewriter font}
+                    \emph{Emphasized text}
+                    \textsc{Small Caps}</div>
+                <div class="usage-note">Various text formatting commands for emphasis</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📊</span>2. Lists and Enumerations</h2>
+
+        <div class="grid">
+            <div class="snippet-container">
+                <div class="snippet-header">Unordered Lists</div>
+                <div class="snippet-description">Bullet point lists for general items</div>
+                <div class="code-block">\begin{itemize}
+                    \item First item
+                    \item Second item
+                    \begin{itemize}
+                    \item Nested item
+                    \item Another nested item
+                    \end{itemize}
+                    \item Third item
+                    \end{itemize}</div>
+                <div class="usage-note">Creates bullet points with automatic nesting</div>
+            </div>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Ordered Lists</div>
+                <div class="snippet-description">Numbered lists for sequential items</div>
+                <div class="code-block">\begin{enumerate}
+                    \item First step
+                    \item Second step
+                    \begin{enumerate}
+                    \item Sub-step A
+                    \item Sub-step B
+                    \end{enumerate}
+                    \item Third step
+                    \end{enumerate}</div>
+                <div class="usage-note">Creates numbered lists with automatic numbering</div>
+            </div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Custom Lists</div>
+            <div class="snippet-description">Description lists for definitions and explanations</div>
+            <div class="code-block">\begin{description}
+                \item[Algorithm] A step-by-step procedure for solving a problem
+                \item[Data Structure] A way of organizing and storing data
+                \item[Complexity] A measure of computational resources needed
+                \end{description}</div>
+            <div class="usage-note">Creates definition-style lists with custom labels</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🧮</span>3. Mathematical Expressions</h2>
+
+        <div class="grid">
+            <div class="snippet-container">
+                <div class="snippet-header">Inline Mathematics</div>
+                <div class="snippet-description">Math within text paragraphs</div>
+                <div class="code-block">The famous equation is $E = mc^2$, where
+                    $E$ is energy, $m$ is mass, and $c$ is
+                    the speed of light ($c \approx 3 \times 10^8$ m/s).</div>
+                <div class="usage-note">Embeds mathematical expressions within normal text</div>
+            </div>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Display Mathematics</div>
+                <div class="snippet-description">Centered mathematical equations</div>
+                <div class="code-block">\[
+                    E = mc^2
+                    \]
+
+                    \begin{equation}
+                    \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+                    \end{equation}</div>
+                <div class="usage-note">Creates centered equations, with or without numbering</div>
+            </div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Complex Mathematical Expressions</div>
+            <div class="snippet-description">Advanced mathematical notation for research</div>
+            <div class="code-block">\begin{align}
+                f(x) &= \sum_{n=0}^{\infty} \frac{x^n}{n!} \\
+                &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \\
+                &= e^x
+                \end{align}
+
+                \begin{equation}
+                \mathbf{A} = \begin{pmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                a_{21} & a_{22} & \cdots & a_{2n} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                a_{m1} & a_{m2} & \cdots & a_{mn}
+                \end{pmatrix}
+                \end{equation}</div>
+            <div class="usage-note">Multi-line equations with alignment and matrix notation</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📋</span>4. Tables and Data Presentation</h2>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Basic Table</div>
+            <div class="snippet-description">Simple data tables with borders</div>
+            <div class="code-block">\begin{table}[h!]
+                \centering
+                \caption{Experimental Results}
+                \begin{tabular}{|c|c|c|}
+                \hline
+                Method & Accuracy & Time (ms) \\
+                \hline
+                Algorithm A & 95.2\% & 150 \\
+                Algorithm B & 93.8\% & 120 \\
+                Algorithm C & 97.1\% & 200 \\
+                \hline
+                \end{tabular}
+                \label{tab:results}
+                \end{table}</div>
+            <div class="usage-note">Creates a formatted table with caption and label for referencing</div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Advanced Table</div>
+            <div class="snippet-description">Professional tables with enhanced formatting</div>
+            <div class="code-block">\usepackage{booktabs}
+                \begin{table}[h!]
+                \centering
+                \caption{Performance Comparison}
+                \begin{tabular}{lrrc}
+                \toprule
+                \textbf{Algorithm} & \textbf{Accuracy (\%)} & \textbf{Time (ms)} & \textbf{Rank} \\
+                \midrule
+                Deep Learning & 98.5 & 500 & 1st \\
+                Random Forest & 94.2 & 150 & 2nd \\
+                SVM & 91.8 & 200 & 3rd \\
+                Naive Bayes & 87.3 & 50 & 4th \\
+                \bottomrule
+                \end{tabular}
+                \end{table}</div>
+            <div class="usage-note">Professional table formatting with booktabs package</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🖼️</span>5. Figures and Images</h2>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Including Images</div>
+            <div class="snippet-description">Adding figures to your document</div>
+            <div class="code-block">\usepackage{graphicx}
+
+                \begin{figure}[h!]
+                \centering
+                \includegraphics[width=0.8\textwidth]{filename.png}
+                \caption{System Architecture Diagram}
+                \label{fig:architecture}
+                \end{figure}
+
+                % Reference the figure
+                As shown in Figure \ref{fig:architecture}...</div>
+            <div class="usage-note">Inserts images with automatic numbering and referencing</div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Multiple Figures</div>
+            <div class="snippet-description">Side-by-side figure arrangement</div>
+            <div class="code-block">\usepackage{subcaption}
+
+                \begin{figure}[h!]
+                \centering
+                \begin{subfigure}{0.45\textwidth}
+                \includegraphics[width=\textwidth]{image1.png}
+                \caption{Before optimization}
+                \label{fig:before}
+                \end{subfigure}
+                \hfill
+                \begin{subfigure}{0.45\textwidth}
+                \includegraphics[width=\textwidth]{image2.png}
+                \caption{After optimization}
+                \label{fig:after}
+                \end{subfigure}
+                \caption{Performance comparison}
+                \end{figure}</div>
+            <div class="usage-note">Creates side-by-side figures with individual captions</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📚</span>6. Citations and Bibliography</h2>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Basic Citations</div>
+            <div class="snippet-description">Referencing sources in academic writing</div>
+            <div class="code-block">% In your document
+                Machine learning has revolutionized data analysis \cite{bishop2006}.
+                Recent advances in deep learning \cite{goodfellow2016,lecun2015}
+                have shown remarkable results.
+
+                % At the end of document
+                \begin{thebibliography}{99}
+                \bibitem{bishop2006}
+                Bishop, C.M. (2006). \textit{Pattern Recognition and Machine Learning}.
+                Springer.
+
+                \bibitem{goodfellow2016}
+                Goodfellow, I., Bengio, Y., \& Courville, A. (2016).
+                \textit{Deep Learning}. MIT Press.
+                \end{thebibliography}</div>
+            <div class="usage-note">Manual bibliography creation with in-text citations</div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">BibTeX Citations</div>
+            <div class="snippet-description">Automated bibliography management</div>
+            <div class="code-block">% In preamble
+                \usepackage{natbib}
+
+                % In document
+                \citet{author2023} proposed a new algorithm.
+                Recent studies \citep{author2022,author2021} show...
+
+                % At end of document
+                \bibliographystyle{plain}
+                \bibliography{references}</div>
+            <div class="usage-note">Professional citation management using external .bib file</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">💻</span>7. Code and Algorithms</h2>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Code Listings</div>
+            <div class="snippet-description">Displaying source code with syntax highlighting</div>
+            <div class="code-block">\usepackage{listings}
+                \usepackage{xcolor}
+
+                \lstset{
+                language=Python,
+                basicstyle=\ttfamily\small,
+                keywordstyle=\color{blue},
+                commentstyle=\color{green},
+                stringstyle=\color{red},
+                numbers=left,
+                numberstyle=\tiny,
+                frame=single
+                }
+
+                \begin{lstlisting}[caption=Linear Search Algorithm]
+                def linear_search(arr, target):
+                for i in range(len(arr)):
+                if arr[i] == target:
+                return i
+                return -1
+                \end{lstlisting}</div>
+            <div class="usage-note">Formatted code blocks with syntax highlighting and line numbers</div>
+        </div>
+
+        <div class="snippet-container">
+            <div class="snippet-header">Algorithm Pseudocode</div>
+            <div class="snippet-description">Formal algorithm presentation</div>
+            <div class="code-block">\usepackage{algorithm}
+                \usepackage{algpseudocode}
+
+                \begin{algorithm}
+                \caption{Binary Search}
+                \begin{algorithmic}[1]
+                \Procedure{BinarySearch}{$arr, target$}
+                \State $left \gets 0$
+                \State $right \gets length(arr) - 1$
+                \While{$left \leq right$}
+                \State $mid \gets \lfloor(left + right) / 2\rfloor$
+                \If{$arr[mid] = target$}
+                \State \Return $mid$
+                \ElsIf{$arr[mid] < target$} \State $left \gets mid + 1$ \Else \State $right \gets mid - 1$ \EndIf
+                    \EndWhile \State \Return $-1$ \EndProcedure \end{algorithmic} \end{algorithm}</div>
+                    <div class="usage-note">Professional algorithm presentation with formal notation</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🎯</span>8. Special Environments</h2>
+
+            <div class="grid">
+                <div class="snippet-container">
+                    <div class="snippet-header">Theorems and Proofs</div>
+                    <div class="snippet-description">Mathematical theorems and formal proofs</div>
+                    <div class="code-block">\usepackage{amsthm}
+
+                        \newtheorem{theorem}{Theorem}
+                        \newtheorem{lemma}{Lemma}
+                        \newtheorem{definition}{Definition}
+
+                        \begin{theorem}
+                        For any real number $x$, $e^x \geq 1 + x$.
+                        \end{theorem}
+
+                        \begin{proof}
+                        Define $f(x) = e^x - 1 - x$. Then
+                        $f'(x) = e^x - 1$ and $f''(x) = e^x > 0$.
+                        Since $f'(0) = 0$ and $f''(x) > 0$,
+                        $f(x)$ has a global minimum at $x = 0$.
+                        Therefore, $f(x) \geq f(0) = 0$.
+                        \end{proof}</div>
+                    <div class="usage-note">Creates numbered theorems with formal proof environments</div>
+                </div>
+
+                <div class="snippet-container">
+                    <div class="snippet-header">Boxes and Frames</div>
+                    <div class="snippet-description">Highlighted content boxes</div>
+                    <div class="code-block">\usepackage{tcolorbox}
+
+                        \begin{tcolorbox}[title=Important Note]
+                        This is a highlighted information box
+                        that draws attention to key concepts.
+                        \end{tcolorbox}
+
+                        \usepackage{fancybox}
+                        \fbox{This text is in a simple frame}
+
+                        \shadowbox{This text has a shadow}</div>
+                    <div class="usage-note">Creates attention-grabbing boxes for important information</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📐</span>9. Advanced Formatting</h2>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Multi-column Layout</div>
+                <div class="snippet-description">Creating newspaper-style columns</div>
+                <div class="code-block">\usepackage{multicol}
+
+                    \begin{multicols}{2}
+                    This text will be displayed in two columns.
+                    LaTeX automatically balances the content
+                    between the columns and handles page breaks
+                    appropriately.
+
+                    \columnbreak % Force column break
+
+                    This text starts in the second column.
+                    You can have different amounts of text
+                    in each column.
+                    \end{multicols}</div>
+                <div class="usage-note">Creates multi-column layouts for efficient space usage</div>
+            </div>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Custom Headers and Footers</div>
+                <div class="snippet-description">Professional document headers and footers</div>
+                <div class="code-block">\usepackage{fancyhdr}
+
+                    \pagestyle{fancy}
+                    \fancyhf{} % Clear all header/footer
+                    \fancyhead[L]{Chapter \thechapter}
+                    \fancyhead[C]{Your Document Title}
+                    \fancyhead[R]{\today}
+                    \fancyfoot[L]{Your Name}
+                    \fancyfoot[C]{\thepage}
+                    \fancyfoot[R]{University Name}
+
+                    \renewcommand{\headrulewidth}{0.4pt}
+                    \renewcommand{\footrulewidth}{0.4pt}</div>
+                <div class="usage-note">Customizes page headers and footers with rules and content</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🔗</span>10. Cross-References and Links</h2>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Internal References</div>
+                <div class="snippet-description">Linking to sections, figures, and equations</div>
+                <div class="code-block">% Label your content
+                    \section{Introduction}\label{sec:intro}
+                    \begin{equation}\label{eq:einstein}
+                    E = mc^2
+                    \end{equation}
+                    \begin{figure}\label{fig:diagram}
+                    % figure content
+                    \end{figure}
+
+                    % Reference them
+                    As discussed in Section \ref{sec:intro},
+                    Equation \ref{eq:einstein} shows the
+                    mass-energy equivalence. See Figure
+                    \ref{fig:diagram} for details.</div>
+                <div class="usage-note">Creates automatic cross-references that update with document changes</div>
+            </div>
+
+            <div class="snippet-container">
+                <div class="snippet-header">Hyperlinks</div>
+                <div class="snippet-description">Adding clickable links to documents</div>
+                <div class="code-block">\usepackage{hyperref}
+
+                    % External links
+                    Visit \href{https://www.latex-project.org/}{LaTeX Project}
+                    for more information.
+
+                    % Email links
+                    Contact us at \href{mailto:email@university.edu}{email@university.edu}
+
+                    % Internal links (automatic with hyperref)
+                    See Section \ref{sec:intro} % becomes clickable</div>
+                <div class="usage-note">Creates clickable hyperlinks for web URLs and email addresses</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📊</span>11. Data Visualization</h2>
+
+            <div class="snippet-container">
+                <div class="snippet-header">TikZ Graphics</div>
+                <div class="snippet-description">Creating diagrams and plots within LaTeX</div>
+                <div class="code-block">\usepackage{tikz}
+                    \usepackage{pgfplots}
+
+                    % Simple diagram
+                    \begin{tikzpicture}
+                    \draw (0,0) rectangle (4,3);
+                    \draw (2,1.5) circle (0.5);
+                    \node at (2,1.5) {Data};
+                    \draw[->] (1,0.5) -- (3,0.5);
+                    \node at (2,0.2) {Process};
+                    \end{tikzpicture}
+
+                    % Simple plot
+                    \begin{tikzpicture}
+                    \begin{axis}[xlabel=$x$, ylabel=$f(x)$]
+                    \addplot[domain=0:4] {x^2};
+                    \end{axis}
+                    \end{tikzpicture}</div>
+                <div class="usage-note">Creates professional diagrams and plots directly in LaTeX</div>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <h3>💡 Pro Tips for MSc Students:</h3>
+            <ul>
+                <li><strong>Always use labels:</strong> Label your sections, figures, tables, and equations for easy
+                    referencing</li>
+                <li><strong>Consistent formatting:</strong> Use custom commands for repeated formatting patterns</li>
+                <li><strong>Package management:</strong> Only include packages you actually use to avoid conflicts</li>
+                <li><strong>Version control:</strong> Use Git to track changes in your LaTeX documents</li>
+                <li><strong>Collaboration:</strong> Consider Overleaf for real-time collaborative editing</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #e0e0e0; color: #666;">
+            <p style="margin: 0; font-size: 14px;">
+                <strong>Created by:</strong> Systems Engineer Tayab Farooq<br>
+                <em>Flutter and ML Specialized</em><br>
+                <small>For MSc Level LaTeX Training Session</small>
+            </p>
+        </div>
+</body>
+
+</html>

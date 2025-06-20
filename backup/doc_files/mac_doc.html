@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Setup Guide for Mac (Apple Silicon)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+
+        .verification {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .command {
+            background: #1a202c;
+            color: #68d391;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .step {
+            margin: 25px 0;
+        }
+
+        .step-number {
+            background: #007bff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .checklist {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .check-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-item::before {
+            content: "✅";
+            margin-right: 10px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        h1,
+        h2 {
+            color: #2c3e50;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📄 LaTeX Setup Guide for Mac (Apple Silicon)</h1>
+        <p>Complete installation, verification and first document creation</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📥</span>Step 1: Download and Install LaTeX</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Download MacTeX (Full Distribution):</strong>
+            <p>Visit: <a href="https://www.tug.org/mactex/" target="_blank"
+                    style="color: #007bff; text-decoration: none;">https://www.tug.org/mactex/</a></p>
+            <ul>
+                <li>Click "MacTeX Download" button</li>
+                <li>Download size: ~4.5GB (includes everything)</li>
+                <li>Compatible with Apple Silicon (M1/M2/M3) Macs</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Alternative - Smaller Installation (BasicTeX):</strong>
+            <p>For minimal setup: <a href="https://www.tug.org/mactex/morepackages.html" target="_blank"
+                    style="color: #007bff;">https://www.tug.org/mactex/morepackages.html</a></p>
+            <ul>
+                <li>Download BasicTeX (~100MB)</li>
+                <li>Install additional packages as needed later</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Install the Downloaded Package:</strong>
+            <ul>
+                <li>Double-click the .pkg file</li>
+                <li>Follow installation wizard</li>
+                <li>Enter admin password when prompted</li>
+                <li>Installation takes 10-15 minutes</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Installation Notes:</strong>
+            <ul>
+                <li>Requires macOS 10.15 or later</li>
+                <li>Need ~7GB free disk space</li>
+                <li>Close all applications during installation</li>
+                <li>Restart Terminal after installation completes</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <strong>What Gets Installed:</strong>
+            <div class="checklist">
+                <div class="check-item">TeX Live 2025 (complete LaTeX distribution)</div>
+                <div class="check-item">TeXShop (GUI editor)</div>
+                <div class="check-item">LaTeXiT (equation editor)</div>
+                <div class="check-item">TeX Live Utility (package manager GUI)</div>
+                <div class="check-item">BibDesk (bibliography manager)</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <strong>Locate Installed Applications:</strong>
+            <p>After installation, find these apps in your Applications folder:</p>
+            <div class="code-block"># Check Applications folder
+                ls /Applications | grep -E "(TeX|BibDesk|LaTeXiT)"
+
+                # Or open Applications folder
+                open /Applications</div>
+
+            <div style="margin: 15px 0;">
+                <strong>You should see:</strong>
+                <ul>
+                    <li><strong>TeX folder</strong> - Contains TeXShop, TeX Live Utility, LaTeXiT</li>
+                    <li><strong>BibDesk</strong> - Bibliography management</li>
+                </ul>
+            </div>
+
+            <div style="background: #f1f3f4; padding: 15px; border-radius: 6px; margin: 15px 0;">
+                <strong>How to Access Each Component:</strong>
+                <table style="width: 100%; margin-top: 10px;">
+                    <tr>
+                        <td style="padding: 5px; font-weight: bold;">TeXShop:</td>
+                        <td style="padding: 5px;">Applications → TeX → TeXShop</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px; font-weight: bold;">LaTeXiT:</td>
+                        <td style="padding: 5px;">Applications → TeX → LaTeXiT</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px; font-weight: bold;">TeX Live Utility:</td>
+                        <td style="padding: 5px;">Applications → TeX → TeX Live Utility</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px; font-weight: bold;">BibDesk:</td>
+                        <td style="padding: 5px;">Applications → BibDesk</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">6</div>
+            <strong>Test Each Component:</strong>
+            <ul>
+                <li><strong>TeXShop:</strong> Open and create new document to verify editor works</li>
+                <li><strong>TeX Live Utility:</strong> Open to see package manager interface</li>
+                <li><strong>LaTeXiT:</strong> Open and type simple equation like "x^2" to test</li>
+                <li><strong>Command Line:</strong> Run verification commands below</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section verification">
+        <h2><span class="emoji">🔍</span>Step 2: Verify Your LaTeX Installation</h2>
+        <p>Open <strong>Terminal</strong> (found in Applications → Utilities) and run these commands to check your
+            setup:</p>
+
+        <div class="step">
+            <h3>Check if pdflatex is installed:</h3>
+            <div class="code-block">which pdflatex</div>
+            <p><strong>Expected output:</strong> <code>/Library/TeX/texbin/pdflatex</code></p>
+        </div>
+
+        <div class="step">
+            <h3>Check LaTeX version:</h3>
+            <div class="code-block">pdflatex --version</div>
+            <p><strong>Expected output:</strong> Should show "pdfTeX 3.141592653" and "TeX Live 2025"</p>
+        </div>
+
+        <div class="step">
+            <h3>Check package manager:</h3>
+            <div class="code-block">sudo tlmgr --version</div>
+            <p><strong>Expected output:</strong> Should show "tlmgr revision" and installation path</p>
+        </div>
+
+        <div class="step">
+            <h3>Verify TeX directory:</h3>
+            <div class="code-block">ls /usr/local/texlive/</div>
+            <p><strong>Expected output:</strong> Should show "2025" and "texmf-local" folders</p>
+        </div>
+
+        <div class="checklist">
+            <h3>✅ Verification Checklist:</h3>
+            <div class="check-item">pdflatex command found in /Library/TeX/texbin/</div>
+            <div class="check-item">Version shows TeX Live 2025</div>
+            <div class="check-item">tlmgr package manager working</div>
+            <div class="check-item">TeX Live directory exists</div>
+            <div class="check-item">TeX app visible in Applications folder</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🛠️</span>Step 3: Create Your First LaTeX Document</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Create a new file using Terminal:</strong>
+            <div class="code-block">nano hello.tex</div>
+            <p>This opens a simple text editor in Terminal.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Copy and paste this LaTeX code:</strong>
+            <div class="code-block">\documentclass{article}
+                \usepackage[utf8]{inputenc}
+                \title{My First LaTeX Document}
+                \author{Your Name}
+                \date{\today}
+
+                \begin{document}
+                \maketitle
+
+                \section{Introduction}
+                Hello, LaTeX! This is my first document created on Mac with Apple Silicon.
+
+                \section{Mathematics}
+                LaTeX is great for math: $E = mc^2$
+
+                \section{Lists}
+                Here's a simple list:
+                \begin{itemize}
+                \item First item
+                \item Second item
+                \item Third item
+                \end{itemize}
+
+                \end{document}</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Save and exit the editor:</strong>
+            <ul>
+                <li>Press <kbd>Ctrl + O</kbd> to save</li>
+                <li>Press <kbd>Enter</kbd> to confirm filename</li>
+                <li>Press <kbd>Ctrl + X</kbd> to exit</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">⚡</span>Step 4: Compile Your Document</h2>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Compile the LaTeX file to PDF:</strong>
+            <div class="code-block">pdflatex hello.tex</div>
+        </div>
+
+        <div class="success">
+            <strong>Success indicators:</strong>
+            <ul>
+                <li>No error messages appear</li>
+                <li>Output ends with: "Output written on hello.pdf (X pages, Y bytes)"</li>
+                <li>Files created: hello.pdf, hello.aux, hello.log</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Open your created PDF:</strong>
+            <div class="code-block">open hello.pdf</div>
+            <p>This opens the PDF in Preview or your default PDF viewer.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🎯</span>Alternative: Using TeXShop (GUI Method)</h2>
+        <p>For non-technical users who prefer a graphical interface:</p>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Open TeXShop:</strong>
+            <p>Go to Applications → TeX → TeXShop</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Create new document:</strong>
+            <p>File → New, then paste the same LaTeX code from Step 2</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Save and compile:</strong>
+            <ul>
+                <li>Save as "hello.tex"</li>
+                <li>Click the "Typeset" button</li>
+                <li>PDF appears automatically in the preview pane</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section verification">
+        <h2><span class="emoji">✅</span>Final Verification Commands</h2>
+        <p>Run these commands to ensure everything is working perfectly:</p>
+
+        <div class="code-block"># Check if your PDF was created
+            ls -la *.pdf
+
+            # Verify LaTeX can find packages
+            kpsewhich article.cls
+
+            # Test package installation (optional)
+            sudo tlmgr install collection-fontsrecommended
+
+            # Check PATH includes TeX
+            echo $PATH | grep -o '/Library/TeX/texbin'</div>
+
+        <div class="checklist">
+            <h3>🎉 Final Success Checklist:</h3>
+            <div class="check-item">hello.pdf file created successfully</div>
+            <div class="check-item">PDF opens and displays formatted content</div>
+            <div class="check-item">No compilation errors in Terminal</div>
+            <div class="check-item">Math equations render properly</div>
+            <div class="check-item">Title, sections, and lists display correctly</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📚</span>Common Commands Reference</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background: #f1f3f4;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Task</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Command</th>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Create/Edit file</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><span class="command">nano filename.tex</span></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Compile to PDF</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><span class="command">pdflatex filename.tex</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Open PDF</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><span class="command">open filename.pdf</span></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Install package</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><span class="command">sudo tlmgr install
+                        packagename</span></td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;">Update all packages</td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><span class="command">sudo tlmgr update --all</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="warning">
+        <h3>🚨 Troubleshooting Tips:</h3>
+        <ul>
+            <li>If commands not found: Restart Terminal and try again</li>
+            <li>For permission errors with tlmgr: Use <code>sudo</code> before the command</li>
+            <li>If compilation fails: Check for typos in LaTeX syntax</li>
+            <li>For missing packages: Install with <code>sudo tlmgr install packagename</code></li>
+        </ul>
+    </div>
+
+    <div class="success">
+        <p><strong>🎉 Congratulations!</strong> Your LaTeX installation on Mac (Apple Silicon) is now fully functional
+            and verified. You can create professional documents, research papers, and mathematical content with ease.
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #e0e0e0; color: #666;">
+        <p style="margin: 0; font-size: 14px;">
+            <strong>Created by:</strong> Systems Engineer Tayab Farooq<br>
+            <em>Flutter and ML Specialized</em>
+        </p>
+    </div>
+</body>
+
+</html>
